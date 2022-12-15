@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.w3schools.com/favicon.ico"
+    />
+    <title>w3schools</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      nav {
+        position: sticky;
+        /* border: 1px solid red; */
+        height: 2.3rem;
+        padding: 0.3rem;
+      }
+      #w3-logo {
+        height: 2rem;
+        padding: 0.3rem;
+        margin-left: 0.3rem;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+      }
+      .left {
+        float: left;
+      }
+      li {
+        display: inline;
+      }
+      .txt {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+        background-color: none;
+        font-weight: 500;
+      }
+      .txt2 {
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+      .txt:hover,
+      .txt2:hover {
+        opacity: 0.5;
+      }
+      .right {
+        float: right;
+      }
+      .right-image {
+        height: 2rem;
+        padding: 0.59rem;
+      }
+      .btn {
+        background-color: gray;
+        margin-top: 0.1rem;
+        margin-right: 0.5rem;
+        border-radius: 1rem;
+        padding: 0.3rem;
+      }
+      .btn:hover {
+        opacity: 0.8;
+      }
+
+      #btn1 {
+        background-color: #282a35;
+        color: white;
+      }
+      #btn2 {
+        background-color: #f6c0c8;
+      }
+      #btn3 {
+        background-color: #fbf4a3;
+      }
+      #btn4 {
+        background-color: #3b9862;
+        color: white;
+      }
+
+      .main {
+        background-color: #262832;
+        height: 100rem;
+        width: 100%;
+      }
+      i {
+        font-size: 0.45rem;
+      }
+      img:hover {
+        opacity: 0.65;
+      }
+
+      .li-menu {
+        display: none;
+        cursor: pointer;
+      }
+    
+
+      @media only screen and (max-width: 800px) {
+        #li-upgrade {
+          display: none;
+        }
+
+      }
+      /* never shows the home btn until 480 px */
+      @media only screen and (max-width: 10000px) {
+        .dropbtn{
+          display: none;
+        }
+
+      }
+      @media only screen and (max-width: 740px) {
+        #li-getcert {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 630px) {
+        #li-freeweb {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 630px) {
+        #li-login {
+
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+
+        .dropbtn {
+          display: block;
+        }
+        .li-left {
+          display: none;
+        }
+
+        .li-menu {
+          display: inline-block;
+          padding: 0.2rem;
+        }
+
+        .hello {
+          display: none;
+        }
+
+        .menu1:hover {
+          background-color: #00a143;
+          opacity: 1;
+          height: auto;
+        }
+
+        .li-menu:hover .hello {
+          display: block;
+        }
+        .dropdown {
+          display: block;
+        }
+      }
+      /* end of MQ 480 */
+
+      /* showing the things up when hoevering on the menu icon */
+
+      .li-menu {
+        text-align: center;
+        line-height: 0.6rem;
+        cursor: pointer;
+      }
+
+      /* dropdown */
+      .dropdown {
+        position: relative;
+        display: block;
+      }
+
+      .dropbtn {
+        background-color: #00a143;
+        color: white;
+        padding: 0.3rem;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      .dropbtn:hover {
+        background-color: #00a1436c;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .main{
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .ltc{
+        top: 9rem;
+        margin: auto;
+        position: absolute;
+        color: white;
+        font-size: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- Left part -->
+        <li>
+          <a href="#" class="left"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEX///8Eqm0AqGkApWIApGAApmXX7uNtwprv+fQAp2XC5NQAo10msHjg8uqr2sSc07j3/Pp7yKSHzKyByqjq9vC44M3L6NqW0bTg8enH5tdlwJfZ7uRDtoSx3cih1r1owJdXvI9PuYobrXM0sn0AnlQ9tYFLZXugAAAM90lEQVR4nO1d6XryLBBVFrdYjXtrra9Le/+3+GlYAmHJkJDYfg/nV59mgkwCw5xhJgwGCQkJCQkJCQkJCQkJCQkJCQldYDvzY/TqDrbGLsM+kMurO9gaMzr0Af17dQdbI2mYNPz9qNGQjl/dwdaYYWSifIXD/NUdbI3ZcF7F/SRVxNtX968bHIWG2d9f7624iqmZ7V7dlW5wFAriw6u70g02+P9jRq1YEGFGT6/uSjfYZ0LB26u70g22YogO6eTVfekGN7FOkDeQfD6CAtbe4A3cYIFgBeVSn82Ad9z99LJEBhoTE2hzDN/7QAXHYp0gZ+gt72Le1gHmwv9D9S2pjc7DFFzKdWIFv2kF7VP2Wd/YJ/R5CeCvEAVn0oxeAu7KsbcLJdBPfWOnsFf4bDWgq29iIRzSWYi/vfTTrxK4dm7PoE+rBIX7XbnCmSgZrt/Bd8K7E6+lEgRM7+b6AKHZFTBvCuygT35aY7/O0wYaIqhvOSPGrRnU3tyhswd7nzd4RuuAWLACN7Ob9Abza0ZQC0g3vmY20AmtA+w/LyxDBCGYybmAVwxPe9vQlUKg3oJx2CYBqjUOYZ3zrUPgx9Swk4PB+ps8gDFVfwm4NK6hA4w43ay9YQjAqLNgEvkDk/eP5SlTdCSwIQC1gujuamHe9BUO6yyYBZNVOeqANHEBXvYdbtZXM0PK4LdgVryXyz+Gue8WU2yHw81q8QaHfgvmwES+EwR7Ph/QaWR3sw7NVgrZyUuwhqWLCCUoV+hbsLlZeXMzwxsNJYoDle3DpvEbeMWwuFnjdoM0nCg+IRcAAhzj4F5mhlMPptFuhBHFAtI6YqDfBx5pppsVTgstrQZr+CU1BMaQ4NaiusaaXn8DBBDFan+hoxRu8atrLHil8cJnL6yXpG0kUAXhqzbV3Kxzu5VCwEMU98hCkt5lcN/pZ5kAE8Wp8lDzOAraLJgAQtRcTX5EZ+kariHYe1bdrIa00ISTKK4ev5CtKiNV7rBBvTaGBkSxMS004WAJbCuGTpeKju935bkGKNiEKDamhZZG7SxBXKbkuCsG8nZ3UegTXoRoCB9yhG85gCMgEFBbZ1dll9AUE4QwmSpPNXSPDR4f5gYMbJxAmJo92tc8wizUowVHBHGRIwCORMJgIYr7zPsMG+zkD4OIYtQ3OLQSRYXrmsANdvLBkfmnm9WSFpqwEcX84lzESKNUBbAbjXM4LQQ/CWLbNN0h6/0oCzOjAuAdMrTZgJfPEVRFhwu2RLj6W4hcmyZ8gYmib4LogmO484odWU67a1YGShHF5AjdDTAxiUGGNDxpQ9tQ12M+ztbX4TMmTNBpM2uVkRjbfhTUD0wia4hiPomRbRl5DWBvJcCCRVChBq3Cu2aPWQgGnhPRR7ZamxC90WERRmsR6oqPFtssBmQoFB7qunavYUROpHgp8FDXR/caRoiAcqieZtNQVydYRVoxNLYAtmCBrLYRWu9EiL5qph9swWj3Gg6WTVJHDFS2d+GhroD4WWPEUNDYooeHunpIj41B3400C3io69i9hmXItTEsyX5gC9ZHqUj7MJol3Sk41NUpji1fojXpNjDU1S3aEkW7tYDf372G8EQiKxxEDx7qWvagYjsNHY2CLVgfRHHRYsVwel7gUFdIunpjNN/e9WRXgBP6fzdR9GTI/C6iCE4kCukcPBXyFxNFf6YamCg2SCQKRjOiWGMk/gdEsc7Q/y6i2OAlTusW679PFGsbBVuw30kUAU4zPD7cB1EM3auH1ID9baII6lPUmrnWCCOKwHEFDnX1QRTD8p6gtgHeYrfaFQghimD7Dq+Z64MoBgRP4Wt0pJq5OIATxQA/628SxaBNFagF6+ULH9Bt+CC+MwG+xD5GKXQbPpCzwixYLyEpaMVJaNwBZqO70cgAZBs+OMkAYsH6WPELQIhi+ISpt2C9eG0M9dvw4VUhAKIIrvWOgPph2qDROqLYC3sSqIuuNKjOqieKfTDgEv7oSsP9MD9R7CWKUWLknTQNqaqfKPYRiVLh24ZvUulawBfq6iOaqMFHFBtUK3N4nlr/HyxzV5w0qDgXcBPFPqL6FeROojht4R27iOJLPqrnytem4G9vWeAKdfWxu2bC7ma1nDB2othLKq0J+zY88PMbLtiJYj+00ISNKLaeMDai2MDLjQNbdKW9d2zRMLx+PRZMohhhwphEsTdaaMIkiiSCd1y1YL1s/7pQJYpRJkz14yrWEq/eUH3cURrViWJjLzcOdKLYiBaa0Ilicy83DlSiGG3CqBashZcbB2p0pcnHc6xQiSKO1GZzlEQx4oQpLRj4+2bdoSSKMSdMOUzjtdkYIroSdVtIEEXwdwa7hJg0cb1jRhR7jAH7wPK1I08YRhT7jAH70MmEeVqwX3NwzJMoRp8wTwsWw8uNgx/UwYTZ0J5jwD58Zl1MmGnfMWAfLpcOGl32HQP2If/75xAlJCQkJCQkJCQkJCQkJCQM8vPigXPXG5nsV14SBJ980weyrhMmsuev4D7TaCXYd0E6rxQoQuuvyR1KGkZC0rBDJA0jIWnYIZKGkZA07BBJw0iIpeH713q1Ouwc2T/5x9m8rGqY79bj1Xrn2oDPZ8vNarOcuTfoJ4XEwSJh1XB/LtqD71/u5oRShOg0u1vyDGeXDPPLc2WDttRwe8ym7Lr1hN7did9Psx97GqOUwKaEqWG+pkIa+OX5/FR+lR/he+UxjubKN/sRRbKKRWp4Ls/YQCaZ2t/U+/HQZHp+CUPDPVWOZckgOYy5fmYHQtq7X1ePCJFtcg0XZy0vlFQyKTbV+40jKQyJTJOoajjTE+khzFGU5IiTDrQUkqNZXSGOBWEaonGlTijTXoHlfqoXtFskpqpERUORMohEd3FtVhbPlqP0cuHnZCjlVGMxIB6TSB698D1TNGQDAKHyJAg1J3qFLffTY4hERUOe9onnxxNhf9Zmp7ACEZaTuyx+Dsl0wx1PlEXZfb08jItTNBDmD6D89ufj8nh1IeKhllUEH+KBZ6f1cn2VEqW9mkmJqypBSgldQ15cUxxSlrPMcFxX38aU4iNz/DBRiIq0ZlGoRo58mZjdUHkSttSQjIt/5UcmrqTUcgF8ZPfkY35LmdCIdImJKaFr+FF0V5wLhZ9jB9etyOzIL24f9sfxE/wSz9nNFAN+LbsvNCTyMk/Ulof18YR3Us6UHX8FwuLyYygVia+KREXDWXGDONJx/ezsv7pE+uIWe5EyH+eOZ8Q1VNPQWH/lkZI/ygTgODOlxVxlVk7LZBM1s3YN9+wdBuV8ssFML2ap34gNYFcqPtdQTaFl9VkiYZHPGb0ag2X545EqMbRIELGWW+chXgakY/GCI0Ruq4oXxIopp67yI75aXJR/sVky5cOG1fFVCmrY4aH8JbAxVxkkXELYmoot5ZVzNDstwbFoWXCEaHY/KK9yxR6my5nkK76qwJtmB9h4wyPLXdxcc4lPi4Qc2xUNZeXcw2nDR1gty1Y5ie6h5EW612zpcVY+8J6oU0LXkI3Z6vGibOgfPRJTRcL0aRaKT4OmsGPXJj/qaVFIOiV8ca3RUB1iuoYba/+RMrb5KBnYJFwaPoa2Wlg2vYNm5Owno6WS4tsIR+vvwzXkb6jCyIjSYy4xcUtY2dMBlWdbgYuStosjFbeJAw24ZXTVU9dqyBa7isvxzkTY+sBsWeUcUU3CwQ9HhxPBouIDnjX9tjgxu8r9rl3RuLO4sFbDfcUHLMC8CG5ufRLChDs5/v7ASZHlWEg3FupPcjeeOgZ6rYZsuFUGIXeTtrUS4n++KMZFXVydOh2ekDI3xQ5wn0T7fNe27Ey9hmwia3XeF70oxi0h/6VpmK+fvV2LZ84HtL9geIyfG5BynGga8tJ7hdB9IioXr3oN+cdelPv5Ib6SfvAqP3pxSlTeYbFfKo8e5Rr6N4iZOSDclWRkUa62nBwjdC5G1ef4MW7lqYr1GorCV4QWz6eef/GDHhXz55Io/WRdw8KlkVePuoNnR84dvfNj+L2vuaspzJ+swaNk+HOfsmWTrMAaSoJFye3nRsQ6pnzuol5C15C9EDR/Opj7K38cXgVlmR0lWNhf5RErQZGSxH9/QDWUFHg4VIJBKhurl6hYGh5TwM/ucrpfSzSMjz9lb+XFnXlWbcanCERDQQi1+/Ue2STUopKKhsZnUGh9ZVI+18rrkW58R5VDUqk85Ryk4WCEqvdXgw6mhOYBGLE2oj1zDPoix7r02R6ed5VLHLB0zR+OeXnE+SQzYghvxb+IXtejtK7dr0gQjwR5NkmVgr3tiZTSBLipMDncMvwAGW7eLJcXF0Kel7P5QXEy8/HqgbFqqrfFv1aVt5SfT0Xr+MHp7N5DKfFzrkqwJrWRvR9PWX9OIVw/H318jNz7Cu/7j/1nizKnt8f9/g8G1Uuo2AZJJyQkJCQkJCQkJCQkJCQkJPxG/Ac0U6qVxNyUEQAAAABJRU5ErkJggg=="
+              alt="logo"
+              id="w3-logo"
+          /></a>
+        </li>
+
+        <!-- Adding the menu bar for the responsive part  -->
+
+        <!--        
+        <li class="li-menu menu1 txt left">
+          <p id="li-menu">
+            Menu <br />
+            <i>&#9660;</i>
+          </p>
+        </li> -->
+
+        <div class="dropdown" style="float: left">
+          <button class="dropbtn">Menu <i>&#9660;</i>  </button>
+          <div class="dropdown-content" style="left: 0">
+            <a href="#" class="left txt" id="tut">Tutorials <i>&#9660;</i> </a>
+
+            <a href="#" class="left txt" id="ref">References <i>&#9660;</i> </a>
+
+            <a href="#" class="left txt" id="exr">Exercises <i>&#9660;</i> </a>
+
+            <a href="#" class="left txt" id="videos">Videos</a>
+          </div>
+        </div>
+
+        <!-- Adding the menu bar for the responsive part  -->
+
+        <li class="li-left">
+          <a href="#" class="left txt" id="tut">Tutorials <i>&#9660;</i> </a>
+        </li>
+        <li class="li-left">
+          <a href="#" class="left txt" id="ref">References <i>&#9660;</i> </a>
+        </li>
+        <li class="li-left">
+          <a href="#" class="left txt" id="exr">Exercises <i>&#9660;</i> </a>
+        </li>
+        <li class="li-left">
+          <a href="#" class="left txt" id="videos">Videos</a>
+        </li>
+        <!-- Right Part -->
+
+        <li id="li-login">
+          <a href="#" id="btn4" class="right txt2 btn">Log in</a>
+        </li>
+        <li id="li-freeweb">
+          <a href="#" id="btn3" class="right txt2 btn">Free Website</a>
+        </li>
+        <li id="li-getcert">
+          <a href="#" id="btn2" class="right txt2 btn">Get Certified</a>
+        </li>
+        <li id="li-upgrade">
+          <a href="#" id="btn1" class="right txt2 btn">Upgrade</a>
+        </li>
+
+        <li>
+          <a href="#" class="right">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/3031/3031293.png"
+              alt=""
+              id="search"
+              class="right-image"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="right">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/44/44386.png"
+              alt=""
+              id="earth"
+              class="right-image"
+            />
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="right">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/8338/8338708.png"
+              alt=""
+              id="dark-mode-switch"
+              class="right-image"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main">
+      <div class="ltc">
+        Learn to Code
+      </div>
+
+    </div>
+    
+  </body>
+</html>
